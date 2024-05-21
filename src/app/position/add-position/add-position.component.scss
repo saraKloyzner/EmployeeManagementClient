@@ -1,0 +1,29 @@
+mat-card {
+  width: 400px; // רוחב רצוי לכרטיסיה
+  margin: auto; // מיקוד אופקי להשארה באמצע
+  margin-top: 80px; // מרווח מעל הכרטיסיה, על מנת להשאיר מרווח מעל ההדר
+
+  padding: 20px; // הוספת שוליים לתוך הכרטיסיה
+  text-align: center; // יישור תוכן הכרטיסיה למרכז
+  display: flex; // תצוגת הכרטיסיה בתצורת רצף
+  flex-direction: column; // כיוון של הרכיבים בעמודה אחת
+  justify-content: center; // יישור תוכן למרכז אופקי
+
+  form {
+    display: flex; // תצוגת הטופס בתצורת רצף
+    flex-direction: column; // כיוון של הרכיבים בעמודה אחת
+
+    mat-form-field {
+      margin-bottom: 20px; // מרווח בין שדה הקלט לשדה הקודם
+    }
+
+    button {
+      background-color: #e5b813; // צבע רקע של הכפתור
+      color: white; // צבע טקסט בכפתור
+      width: 100%; // כפתור ברוחב הכרטיסיה
+      border: none; // הסרת המסגרת השחורה מסביב לכפתור
+      border-radius: 7px;
+    }
+ 
+  }
+}

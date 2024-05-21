@@ -1,0 +1,39 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+  }
+  
+  .form-wrapper {
+    width: 500px;
+    padding: 20px;
+  }
+  
+  mat-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 16px;
+  }
+  .color{
+    background-color: black;
+    color:  white;
+  }
+  .color1{
+    background-color: #e5b813;
+  }
+  .colorRadio{
+    background-color: #e5b813;
+  }
+ .width{
+  width: 100%;
+ }
+  
+  

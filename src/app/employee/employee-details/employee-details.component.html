@@ -1,0 +1,60 @@
+<div id="button">
+<button mat-raised-button  (click)="exportDataToExcel()" matTooltip="Export to Excel filtered employees">
+	<mat-icon>file_download</mat-icon>
+	Export to Excel
+  </button>
+  <button mat-raised-button  [disabled]="!canAddEmployee" (click)="addEmployee()" matTooltip="Add employee">
+	<mat-icon>person_add</mat-icon>
+	Add Employee
+  </button>
+</div>
+<div scrollTracker>
+
+  <div class="example-container">
+	<div class="input-icon-container">
+	  <input type="text" class="custom-input" placeholder="search employees..." [(ngModel)]="searchQuery" (input)="filterEmployees()">
+	  <i class="material-icons search-icon">search</i>
+	</div>
+  </div>
+  
+  <table class="table table-striped">
+	<thead>
+	  <tr>
+		<th scope="col">ID</th>
+		<th scope="col">First Name</th>
+		<th scope="col">Last Name</th>
+		<th scope="col">Start Of Work Date</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr *ngFor="let employee of filteredEmployees | slice:(page-1)*pageSize:page*pageSize">
+		<th scope="row">{{ employee.identity }}</th>
+		<td>{{ employee.firstName }}</td>
+		<td>{{ employee.lastName }}</td>
+		<td>{{ employee.startOfWorkDate }}</td>
+		<td>
+			<mat-icon (click)="del(employee.identity)" class="clickable-icon" matTooltip="Delete">delete</mat-icon>
+		  
+		</td>
+		<td>
+			<mat-icon (click)="edit(employee.identity.toString())" class="clickable-icon" matTooltip="Edit">edit</mat-icon>
+
+		
+	  </tr>
+	</tbody>
+  </table>
+  
+
+ 
+  <div class="d-flex justify-content-between p-2 colorBack" >
+	
+	
+	  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+	</ngb-pagination>
+	<select class="form-select" style="width: auto" [(ngModel)]="pageSize">
+	  <option [ngValue]="8">8 items per page</option>
+	  <option [ngValue]="15">15 items per page</option>
+	  <option [ngValue]="20">20 items per page</option>
+	</select>
+  </div>
+</div>
